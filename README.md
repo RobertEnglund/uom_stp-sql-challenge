@@ -1,78 +1,118 @@
-# uom_stp-sql-challenge
+# uom_stp-python-api-challenge
 ### University of Minnesota Data Analytics and Visualization Bootcamp
 ### Start date: 9/14/2020
-### Week 9:  Introduction to SQL
-### Home work due: 11/21/2020
+### Week 6:  Working with web data
+### Home work due: 10/31/2020
 
+# Python API Homework - What's the Weather Like?
 
-## Submission
+## Three observations from Part I
+
+1. There is a strong correlation between temperature and latitude for cities in the northern hemisphere
+2. There seems to be a correlation betwen temperature and latitude for cities in the southern hemisphere, but not strong
+3. There is no correlation between any of the other metrics (humidity, wind, cloudiness) and latitude for any of the cities
+
+## Final Heatmaps
+
+Screenshots of heatmaps in the Images folder
 
 Heatmap with markers
-![Markers](Images/SQL_Challenge_Model.PNG)
+![Markers](Images/myHeatmap_with_markers.PNG)
 
-Create a .sql file of your table schemata.
+First heatmap (no markers)
+![NoMarkers](Images/myHeatmap_firstMap_noMarkers.PNG)
 
-Create a .sql file of your queries.
+## Background
 
-(Optional) Create a Jupyter Notebook of the bonus analysis.
+Whether financial, political, or social -- data's true power lies in its ability to answer questions definitively. So let's take what you've learned about Python requests, APIs, and JSON traversals to answer a fundamental question: "What's the weather like as we approach the equator?"
 
-Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot.
+Now, we know what you may be thinking: _"Duh. It gets hotter..."_
 
-Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
+But, if pressed, how would you **prove** it?
 
+![Equator](Images/equatorsign.png)
 
+### Before You Begin
 
-## Instructions
+1. Create a new repository for this project called `python-api-challenge`. **Do not add this homework to an existing repository**.
 
-Data Modeling
-Inspect the CSVs and sketch out an ERD of the tables. Feel free to use a tool like http://www.quickdatabasediagrams.com.
+2. Clone the new repository to your computer.
 
-Data Engineering
+3. Inside your local git repository, create a directory for both of the  Python Challenges. Use folder names corresponding to the challenges: **WeatherPy**.
 
-Use the information you have to create a table schema for each of the six CSV files. Remember to specify data types, primary keys, foreign keys, and other constraints.
+4. Inside the folder that you just created, add new files called `WeatherPy.ipynb` and `VacationPy.ipynb`. These will be the main scripts to run for each analysis.
 
-For the primary keys check to see if the column is unique, otherwise create a composite key. Which takes to primary keys in order to uniquely identify a row.
-Be sure to create tables in the correct order to handle foreign keys.
+5. Push the above changes to GitHub.
 
-Import each CSV file into the corresponding SQL table. Note be sure to import the data in the same order that the tables were created and account for the headers when importing to avoid errors.
+## Part I - WeatherPy
 
+In this example, you'll be creating a Python script to visualize the weather of 500+ cities across the world of varying distance from the equator. To accomplish this, you'll be utilizing a [simple Python library](https://pypi.python.org/pypi/citipy), the [OpenWeatherMap API](https://openweathermap.org/api), and a little common sense to create a representative model of weather across world cities.
 
+Your first requirement is to create a series of scatter plots to showcase the following relationships:
 
-Data Analysis
+* Temperature (F) vs. Latitude
+* Humidity (%) vs. Latitude
+* Cloudiness (%) vs. Latitude
+* Wind Speed (mph) vs. Latitude
 
-Once you have a complete database, do the following:
+After each plot add a sentence or too explaining what the code is and analyzing.
 
-List the following details of each employee: employee number, last name, first name, sex, and salary.
+Your second requirement is to run linear regression on each relationship, only this time separating them into Northern Hemisphere (greater than or equal to 0 degrees latitude) and Southern Hemisphere (less than 0 degrees latitude):
 
-List first name, last name, and hire date for employees who were hired in 1986.
+* Northern Hemisphere - Temperature (F) vs. Latitude
+* Southern Hemisphere - Temperature (F) vs. Latitude
+* Northern Hemisphere - Humidity (%) vs. Latitude
+* Southern Hemisphere - Humidity (%) vs. Latitude
+* Northern Hemisphere - Cloudiness (%) vs. Latitude
+* Southern Hemisphere - Cloudiness (%) vs. Latitude
+* Northern Hemisphere - Wind Speed (mph) vs. Latitude
+* Southern Hemisphere - Wind Speed (mph) vs. Latitude
 
-List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
+After each pair of plots explain what the linear regression is modeling such as any relationships you notice and any other analysis you may have.
 
-List the department of each employee with the following information: employee number, last name, first name, and department name.
+Your final notebook must:
 
-List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+* Randomly select **at least** 500 unique (non-repeat) cities based on latitude and longitude.
+* Perform a weather check on each of the cities using a series of successive API calls.
+* Include a print log of each city as it's being processed with the city number and city name.
+* Save a CSV of all retrieved data and a PNG image for each scatter plot.
 
-List all employees in the Sales department, including their employee number, last name, first name, and department name.
+### Part II - VacationPy
 
-List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+Now let's use your skills in working with weather data to plan future vacations. Use jupyter-gmaps and the Google Places API for this part of the assignment.
 
-In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+* **Note:** Remember that any API usage beyond the $200 credit will be charged to your personal account. You can set quotas and limits to your daily requests to be sure you can't be charged. Check out [Google Maps Platform Billing](https://developers.google.com/maps/billing/gmp-billing#monitor-and-restrict-consumption) and [Manage your cost of use](https://developers.google.com/maps/documentation/javascript/usage-and-billing#set-caps) for more information.
 
+* **Note:** if you having trouble displaying the maps try running `jupyter nbextension enable --py gmaps` in your environment and retry.
 
-Bonus (Optional)
+* Create a heat map that displays the humidity for every city from the part I of the homework.
 
-As you examine the data, you are overcome with a creeping suspicion that the dataset is fake. You surmise that your boss handed you spurious data in order to test the data engineering skills of a new employee. To confirm your hunch, you decide to take the following steps to generate a visualization of the data, with which you will confront your boss:
+  ![heatmap](Images/heatmap.png)
 
-Import the SQL database into Pandas. (Yes, you could read the CSVs directly in Pandas, but you are, after all, trying to prove your technical mettle.) This step may require some research. Feel free to use the code below to get started. Be sure to make any necessary modifications for your username, password, host, port, and database name:
+* Narrow down the DataFrame to find your ideal weather condition. For example:
 
-    from sqlalchemy import create_engine
-    engine = create_engine('postgresql://localhost:5432/<your_db_name>')
-    connection = engine.connect()
+  * A max temperature lower than 80 degrees but higher than 70.
 
-Consult SQLAlchemy documentation for more information.
+  * Wind speed less than 10 mph.
 
-If using a password, do not upload your password to your GitHub repository. See https://www.youtube.com/watch?v=2uaTPmNvH0I and https://help.github.com/en/github/using-git/ignoring-files for more information.
+  * Zero cloudiness.
 
-Create a histogram to visualize the most common salary ranges for employees.
+  * Drop any rows that don't contain all three conditions. You want to be sure the weather is ideal.
 
-Create a bar chart of average salary by title.
+  * **Note:** Feel free to adjust to your specifications but be sure to limit the number of rows returned by your API requests to a reasonable number.
+
+* Using Google Places API to find the first hotel for each city located within 5000 meters of your coordinates.
+
+* Plot the hotels on top of the humidity heatmap with each pin containing the **Hotel Name**, **City**, and **Country**.
+
+  ![hotel map](Images/hotel_map.png)
+
+As final considerations:
+
+* Create a new GitHub repository for this project called `API-Challenge` (note the kebab-case). **Do not add to an existing repo**
+* You must complete your analysis using a Jupyter notebook.
+* You must use the Matplotlib or Pandas plotting libraries.
+* For Part I, you must include a written description of three observable trends based on the data.
+* For Part II, you must include a screenshot of the heatmap you create and include it in your submission.
+* You must use proper labeling of your plots, including aspects like: Plot Titles (with date of analysis) and Axes Labels.
+* For max intensity in the heat map, try setting it to the highest humidity found in the data set.
