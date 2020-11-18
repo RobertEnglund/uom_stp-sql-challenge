@@ -14,6 +14,7 @@
 Screenshots of ERD in the Images folder
 
 Entity Relationship Diagram
+
 ![ERD](Images/SQL_Challenge_Model.PNG)
 
 
