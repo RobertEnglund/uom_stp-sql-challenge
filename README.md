@@ -12,13 +12,13 @@ Create an image file of your ERD **=>** Images/SQL_Challenge_Model (image below)
 
 ![ERD](Images/SQL_Challenge_Model.png)
 
-Create a .sql file of your table schemata.
+Create a .sql file of your table schemata **_=>_** EmployeeSQL/schema.sql
 
-Create a .sql file of your queries.
+Create a .sql file of your queries **_=>_** EmployeeSQL/queries.sql
 
-(Optional) Create a Jupyter Notebook of the bonus analysis.
+(Optional) Create a Jupyter Notebook of the bonus analysis
 
-Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot.
+Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot
 
 Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
 
