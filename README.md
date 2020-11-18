@@ -8,13 +8,8 @@
 
 ## Submission
 
-
-## ERD
-
-Create an image file of your ERD
-
+Create an image file of your ERD: Images/SQL_Challenge_Model (image below)
 ![ERD](Images/SQL_Challenge_Model.png)
-
 
 Create a .sql file of your table schemata.
 
@@ -81,5 +76,3 @@ If using a password, do not upload your password to your GitHub repository. See 
 Create a histogram to visualize the most common salary ranges for employees.
 
 Create a bar chart of average salary by title.
-
-
