@@ -1,9 +1,14 @@
 # uom_stp-sql-challenge
+### University of Minnesota Data Analytics and Visualization Bootcamp
+### Start date: 9/14/2020
+### Week 9:  Introduction to SQL
+### Home work due: 11/21/2020
 
-Submission
 
-Create an image file of your ERD.
-![Model](Images/SQL_Challenge_Model.PNG)
+## Submission
+
+Heatmap with markers
+![Markers](Images/SQL_Challenge_Model.PNG)
 
 Create a .sql file of your table schemata.
 
@@ -17,7 +22,7 @@ Ensure your repository has regular commits (i.e. 20+ commits) and a thorough REA
 
 
 
-Instructions
+## Instructions
 
 Data Modeling
 Inspect the CSVs and sketch out an ERD of the tables. Feel free to use a tool like http://www.quickdatabasediagrams.com.
