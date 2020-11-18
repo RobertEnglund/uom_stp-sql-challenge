@@ -8,7 +8,8 @@
 
 ## Submission
 
-Create an image file of your ERD: Images/SQL_Challenge_Model (image below)
+Create an image file of your ERD **=>** Images/SQL_Challenge_Model (image below)
+
 ![ERD](Images/SQL_Challenge_Model.png)
 
 Create a .sql file of your table schemata.
