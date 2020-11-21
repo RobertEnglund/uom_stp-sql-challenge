@@ -8,7 +8,7 @@
 
 ## Submission
 
-Create an image file of your ERD:    **_see ==> Images/SQL_Challenge_Model (anmd image below)_**
+Create an image file of your ERD:    **_see ==> Images/SQL_Challenge_Model (and image below)_**
 
 ![ERD](Images/SQL_Challenge_Model.png)
 
