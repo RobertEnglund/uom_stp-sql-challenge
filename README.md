@@ -8,15 +8,15 @@
 
 ## Submission
 
-Create an image file of your ERD **=>** Images/SQL_Challenge_Model (image below)
+Create an image file of your ERD   **==>** Images/SQL_Challenge_Model (image below)
 
 ![ERD](Images/SQL_Challenge_Model.png)
 
-Create a .sql file of your table schemata **_=>_** EmployeeSQL/schema.sql
+Create a .sql file of your table schemata **_see ==>_** EmployeeSQL/schema.sql
 
-Create a .sql file of your queries **_=>_** EmployeeSQL/queries.sql
+Create a .sql file of your queries **_see ==>_** EmployeeSQL/queries.sql
 
-(Optional) Create a Jupyter Notebook of the bonus analysis
+(Optional) Create a Jupyter Notebook of the bonus analysis  **_not completed:  ran into unresolved issues installing psycopg2_**
 
 Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot
 
