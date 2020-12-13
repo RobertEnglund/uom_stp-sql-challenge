@@ -1,2 +1,2 @@
 # Enter your API key
-pgkey = "x"
+pgkey = "7"
